@@ -6,12 +6,6 @@ using Vandelay.Industries.Models;
 namespace Vandelay.Industries.Drivers {
     [OrchardFeature("Vandelay.TagCloud")]
     public class TagCloudDriver : ContentPartDriver<TagCloudPart> {
-
-        protected override string Prefix {
-            get {
-                return "tagcloud";
-            }
-        }
         protected override DriverResult Display(TagCloudPart part, string displayType, dynamic shapeHelper) {
             return ContentShape("Parts_TagCloud",
                 () => shapeHelper.Parts_TagCloud(TagCounts: part.TagCounts));

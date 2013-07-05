@@ -17,14 +17,9 @@
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>4.0</OldToolsVersion>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
+    <UpgradeBackupLocation />
     <TargetFrameworkProfile />
     <UseIISExpress>false</UseIISExpress>
-    <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
-    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -55,25 +50,22 @@
     <Reference Include="HtmlAgilityPack">
       <HintPath>Libraries\HtmlAgilityPack.dll</HintPath>
     </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.84.0.0, Culture=neutral, PublicKeyToken=1b03e6acf1164f73">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\lib\aspnetmvc\System.Web.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\lib\aspnetmvc\System.Web.WebPages.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.XML" />
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\rss.png" />
     <Content Include="Recipes\AddFeedburnerToBlogs.recipe.xml" />
-    <Content Include="Styles\UserStorageAdmin.css" />
     <Content Include="Vandelay.gif" />
     <Content Include="Web.config" />
     <Content Include="Views\Web.config" />
@@ -86,7 +78,7 @@
       <Name>Orchard.Framework</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Core\Orchard.Core.csproj">
-      <Project>{9916839c-39fc-4ceb-a5af-89ca7e87119f}</Project>
+      <Project>{9916839C-39FC-4CEB-A5AF-89CA7E87119F}</Project>
       <Name>Orchard.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Orchard.Autoroute\Orchard.Autoroute.csproj">
@@ -107,9 +99,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\UserStorageController.cs" />
     <Compile Include="Menus\ContentAdminMenu.cs" />
-    <Compile Include="Menus\UserStorageAdminMenu.cs" />
     <Compile Include="Menus\ThemePickerAdminMenu.cs" />
     <Compile Include="Commands\LocalizationManagementCommands.cs" />
     <Compile Include="Controllers\AdminController.cs" />
@@ -120,12 +110,9 @@
     <Compile Include="Filters\RelativeUrlHtmlFilter.cs" />
     <Compile Include="Handlers\RemoteRssPartHandler.cs" />
     <Compile Include="Models\RemoteRssPart.cs" />
-    <Compile Include="Models\UserStorageRecord.cs" />
-    <Compile Include="Permissions\UserStoragePermissions.cs" />
     <Compile Include="RemoteRssMigrations.cs" />
     <Compile Include="Routes\FailRouteProvider.cs" />
     <Compile Include="Services\RemoteRssService.cs" />
-    <Compile Include="Services\UserStorageService.cs" />
     <Compile Include="ThemePickerMigrations.cs" />
     <Compile Include="TagCloudMigrations.cs" />
     <Compile Include="FeedburnerMigrations.cs" />
@@ -168,10 +155,8 @@
     <Compile Include="Services\ThemePickerThemeSelector.cs" />
     <Compile Include="Services\UserAgentThemeSelectionRule.cs" />
     <Compile Include="Shapes\FaviconShapes.cs" />
-    <Compile Include="UserStorageMigrations.cs" />
     <Compile Include="ViewModels\FaviconSettingsViewModel.cs" />
     <Compile Include="ViewModels\ThemePickerIndexViewModel.cs" />
-    <Compile Include="ViewModels\UserStorageAdminViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\EditorTemplates\Parts\RemoteRss.cshtml" />
@@ -215,10 +200,10 @@
     <Content Include="Views\Parts\RemoteRss.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\UserStorage\Index.cshtml" />
+    <Content Include="Views\NotFound.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Styles\Web.config" />
+    <Content Include="Views\ErrorPage.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
